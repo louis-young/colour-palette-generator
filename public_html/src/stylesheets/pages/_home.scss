@@ -1,0 +1,87 @@
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  .swatch {
+    height: calc(100vh - 75px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    label {
+      color: white;
+    }
+  }
+}
+
+.swatch {
+  &:hover {
+    .copy {
+      display: block;
+    }
+  }
+}
+
+.copy {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 1;
+  color: #2d2d2d;
+  font-weight: $medium;
+  padding: 0.5rem;
+  background: #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  border: none;
+  width: 125px;
+  text-align: center;
+}
+
+.header {
+  height: 75px;
+  background: #fff;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.random {
+  background: transparent;
+  transition: unset;
+  &__icon {
+    width: 40px;
+  }
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.notification {
+  opacity: 0;
+  background: #3ba369;
+  padding: 0.75rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  transition: 0.3s;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  &__text {
+    color: white;
+    font-weight: $medium;
+    padding: 0;
+  }
+  &__icon {
+    width: 17.5px;
+    margin-right: 0.75rem;
+  }
+  &--show {
+    opacity: 1;
+  }
+}
